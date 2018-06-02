@@ -6,7 +6,7 @@ spring:
     redisson:
         #config: {"singleServerConfig":{"password":null,"address":"redis://127.0.0.1:6379","database":0},"threads":0,"nettyThreads":0,"codec":{"class":"org.redisson.codec.JsonJacksonCodec"}}
         config-file:
-          yaml: classpath:redisson.yml
+          yaml: ./redisson.yml
     redis:
       host: localhost
       port: 6379

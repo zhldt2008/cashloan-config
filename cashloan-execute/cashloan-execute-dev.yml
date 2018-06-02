@@ -6,7 +6,7 @@ logging:
 spring:
     redisson:
         config-file:
-          yaml: classpath:redisson.yml
+          yaml: ./redisson.yml
     application:
         name: cashloan-execute
     datasource:

@@ -9,3 +9,8 @@ eureka:
     client:
         registerWithEureka: false  #false:不作为一个客户端注册到注册中心
         fetchRegistry: false
+
+logging:
+  level:
+    com.zxbit.cashloan: info
+  file: /home/worker/log/center/cashloan-center.log

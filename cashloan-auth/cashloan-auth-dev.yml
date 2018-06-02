@@ -125,6 +125,6 @@ client:
 
 logging:
   level:
-      tk.mybatis: DEBUG
+      tk.mybatis: INFO
       com.zxbit.cashloan.auth: DEBUG
   file: /home/worker/log/auth/cashloan-auth-server.log

@@ -163,7 +163,7 @@ redis:
 cashloan:
     job:
         admin:
-           addresses: http://127.0.0.1:9080/cashloan-job-admin
+           addresses: http://127.0.0.1:8081/cashloan-job-admin
         executor:
            appname: cashloan-job-execute
            ip:

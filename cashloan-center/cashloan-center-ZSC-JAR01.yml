@@ -1,0 +1,8 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: ZSC-JAR01
+  client:
+    service-url:
+      default-zone: http://ZSC-JAR02:8761/eureka

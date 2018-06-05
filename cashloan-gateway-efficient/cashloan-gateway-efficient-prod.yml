@@ -1,0 +1,105 @@
+server:
+  port: 8765
+
+eureka:
+    instance:
+        statusPageUrlPath: /actuator/info
+        healthCheckUrlPath: /actuator/health
+        home-page-url-path: /
+        # docker 部署开启
+#        prefer-ip-address: true
+#        ip-address: 127.0.0.1
+    client:
+        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
+                    # docker 部署开启
+            defaultZone: http://${EUREKA_HOST:ZSC-JAR01}:${EUREKA_PORT:8761}/eureka/,http://${EUREKA_HOST:ZSC-JAR02}:${EUREKA_PORT:8761}/eureka/
+
+#请求和响应GZIP压缩支持
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+spring:
+  application:
+      name: cashloan-gateway-efficient
+  redis:
+      database: 1
+      host: 172.31.186.176
+      jedis:
+        pool:
+            max-active: 20
+  rabbitmq:
+      host: ${RABBIT_MQ_HOST:172.31.186.176}
+      port:  ${RABBIT_MQ_PORT:5672}
+      username: user_admin
+      password: mGpEmB5u
+  sleuth:
+    enabled: true
+    http:
+      legacy:
+        enabled: true
+  cloud:
+    gateway:
+      locator:
+        enabled: true
+      routes:
+      # =====================================
+      - id: cashloan-auth
+        uri: lb://cashloan-auth
+        order: 8000
+        predicates:
+        - Path=/api/auth/**
+        filters:
+        - StripPrefix=2
+      - id: cashloan-admin
+        uri: lb://cashloan-admin
+        order: 8001
+        predicates:
+        - Path=/api/admin/**
+        filters:
+        - StripPrefix=2
+      - id: cashloan-android
+        uri: lb://cashloan-android
+        order: 8002
+        predicates:
+        - Path=/api/app/**
+        filters:
+        - StripPrefix=2
+
+logging:
+  level:
+    com.zxbit.cashloan.efficient: info
+  file: /home/worker/log/gate/cashloan-gate.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+
+#登录,安卓短信,注册短信,异步回调
+gate:
+  ignore:
+    startWith: /auth/jwt,/app/loan/regist,/app/loan/sendSms,/admin/asyn
+
+
+auth:
+  serviceId: cashloan-auth
+  user:
+    token-header: Authorization
+  client:
+    token-header: x-client-token
+    id: cashloan-gate  #不填则默认读取spring.application.name
+    secret: 123456

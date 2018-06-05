@@ -1,0 +1,23 @@
+---
+spring:
+  profiles: ZSC-JAR01
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: ZSC-JAR01
+  client:
+    service-url:
+      default-zone: http://ZSC-JAR02:8761/eureka
+
+---
+spring:
+  profiles: ZSC-JAR02
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: ZSC-JAR02
+  client:
+    service-url:
+      default-zone: http://JAR01:8761/eureka

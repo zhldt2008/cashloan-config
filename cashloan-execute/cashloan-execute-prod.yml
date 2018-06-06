@@ -16,7 +16,7 @@ spring:
             loginPassword: 123456
         dynamic:
           master:
-            username: user1
+            username: user3
             password: CAEKdQ*f
             driver-class-name: com.mysql.jdbc.Driver
             url: jdbc:mysql://rm-k1a2c3c2ek6oa3rhp.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8&useSSL=false
@@ -39,12 +39,12 @@ spring:
               share-prepared-statements: true
           slave:
             one:
-              username: user1
+              username: user3
               password: CAEKdQ*f
               driver-class-name: com.mysql.jdbc.Driver
               url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8&useSSL=false
             two:
-              username: user1
+              username: user3
               password: CAEKdQ*f
               driver-class-name: com.mysql.jdbc.Driver
               url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8&useSSL=false

@@ -110,7 +110,7 @@ eureka:
 # 用户请求相关属性
 jwt:
   token-header: Authorization
-  expire: 14400
+  expire: 600 #14400
   # jwt密钥 Token相关
   rsa-secret: xx1WET12^%3^(WE45
 

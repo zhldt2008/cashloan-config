@@ -8,7 +8,7 @@ spring:
         config-file:
           yaml: classpath:redisson.yml
     redis:
-      host: localhost
+      host: 47.92.117.118
       port: 6379
       password:
       pool:

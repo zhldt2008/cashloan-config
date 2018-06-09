@@ -8,14 +8,11 @@ spring:
         config-file:
           yaml: ./redisson.yml
     redis:
-      host: 172.31.186.176
-      port: 6379
-      password:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: 10000
+        database: 1
+        host: 172.31.186.176
+        port: 6379
+        pool:
+        max-active: 20
     application:
         name: cashloan-android
 #    jackson:

@@ -174,3 +174,4 @@ redis:
     enable: true
     database: 0
 imageLoaction: /data/pic
+imageSerIp: http://47.92.117.118

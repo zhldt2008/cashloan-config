@@ -159,3 +159,4 @@ redis:
     sysName: cashloan-business
     enable: true
     database: 0
+imageSerIp: http://www.barradata.com

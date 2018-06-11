@@ -29,7 +29,7 @@ spring:
             username: user3
             password: CAEKdQ*f
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://rm-k1a2c3c2ek6oa3rhp.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8mb4&useSSL=false
+            url: jdbc:mysql://rm-k1a2c3c2ek6oa3rhp.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan
             druid:
               initial-size: 3
               max-active: 8
@@ -52,12 +52,12 @@ spring:
               username: user3
               password: CAEKdQ*f
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8mb4&useSSL=false
+              url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan
             two:
               username: user3
               password: CAEKdQ*f
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8mb4&useSSL=false
+              url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan
     rabbitmq:
       host: ${RABBIT_MQ_HOST:172.31.186.176}
       port: ${RABBIT_MQ_PORT:5672}

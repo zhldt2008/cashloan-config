@@ -1,6 +1,6 @@
 logging:
     level:
-        com.zxbit.cashloan.android: DEBUG
+        com.zxbit.cashloan.android: INFO
     file: /home/worker/log/android/cashloan-android.log
 spring:
     redisson:

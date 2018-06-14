@@ -171,4 +171,4 @@ redis:
     enable: true
     database: 0
 imageLoaction: /data1/pic
-imageSerIp: http://www.barradata.com
+imageSerIp: http://www.koo-cash.com/

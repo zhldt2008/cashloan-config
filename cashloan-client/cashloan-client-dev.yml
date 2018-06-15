@@ -1,4 +1,4 @@
 goodtest: cashloan-client
-test: test
-test2: test2
-test5: test5
+test: master
+test2: master
+test5: master

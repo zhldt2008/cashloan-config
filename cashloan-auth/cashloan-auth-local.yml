@@ -101,12 +101,12 @@ eureka:
         healthCheckUrlPath: /actuator/health
         # docker 部署开启
         prefer-ip-address: true
-        ip-address: 192.168.31.152
+        ip-address: 192.168.12.197
     client:
         serviceUrl:
 #            defaultZone: http://localhost:6801/eureka/
                     # docker 部署开启
-            defaultZone: http://${EUREKA_HOST:192.168.31.152}:${EUREKA_PORT:8761}/eureka/
+            defaultZone: http://${EUREKA_HOST:192.168.12.197}:${EUREKA_PORT:8761}/eureka/
 # 用户请求相关属性
 jwt:
   token-header: Authorization

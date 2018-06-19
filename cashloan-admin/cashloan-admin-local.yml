@@ -163,3 +163,4 @@ redis:
     sysName: cashloan-admin
     enable: true
     database: 0
+baseImgUrl: /data1/pic

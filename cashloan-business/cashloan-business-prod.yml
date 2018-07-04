@@ -4,6 +4,12 @@ logging:
         com.zxbit.cashloan.business: DEBUG
     file: /home/worker/log/business/cashloan-business.log
 spring:
+    redis:
+        database: 0
+        host: 172.31.186.176
+        port: 6379
+        pool:
+        max-active: 20
     redisson:
         config-file:
           yaml: ./redisson.yml

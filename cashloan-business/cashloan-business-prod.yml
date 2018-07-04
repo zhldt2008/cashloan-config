@@ -59,6 +59,8 @@ spring:
       port: ${RABBIT_MQ_PORT:5672}
       username: user_admin
       password: mGpEmB5u
+      publisher-confirms: true
+      virtual-host: /
     sleuth:
       enabled: true
       http:

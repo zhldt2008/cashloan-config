@@ -1,7 +1,7 @@
 logging:
     level:
         com.zxbit.cashloan.android: DEBUG
-    file: /home/worker/log/android/cashloan-android-service.log
+    file: /home/worker/log/android-server/cashloan-android-service.log
 spring:
     redisson:
         #config: {"singleServerConfig":{"password":null,"address":"redis://127.0.0.1:6379","database":0},"threads":0,"nettyThreads":0,"codec":{"class":"org.redisson.codec.JsonJacksonCodec"}}
@@ -92,7 +92,7 @@ mybatis-plus:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
 
 server:
-    port: 8786
+    port: 8686
 
 
 eureka:

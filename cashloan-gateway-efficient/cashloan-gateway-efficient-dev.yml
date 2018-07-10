@@ -92,7 +92,7 @@ management:
 #登录,安卓短信,注册短信,异步回调
 gate:
   ignore:
-    startWith: /auth/jwt,/app/loan/regist,/app/loan/sendSms,/admin/asyn
+    startWith: /auth/jwt,/app/loan/regist,/app/loan/sendSms,/admin/asyn,/app/loan/common
 
 
 auth:

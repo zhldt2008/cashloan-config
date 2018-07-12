@@ -152,7 +152,7 @@ auth:
   user:
     token-header: Authorization
   client:
-    id: cashloan-android
+    id: cashloan-android-service
     secret: 123456
     token-header: x-client-token
 

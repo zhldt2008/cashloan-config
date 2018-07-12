@@ -8,7 +8,7 @@ spring:
         config-file:
           yaml: ./redisson.yml
     redis:
-      host: localhost
+      host: 172.26.197.235
       port: 6379
       password:
       pool:
@@ -79,7 +79,7 @@ sample:
 ###################  mybatis-plus配置  ###################
 mybatis-plus:
   mapper-locations: classpath*:mapper/*Mapper.xml
-  typeAliasesPackage: com.zxbit.cashloan.android.entity
+  typeAliasesPackage: com.zxbit.cashloan.android.service.entity
   global-config:
     id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
     db-column-underline: true
@@ -155,7 +155,7 @@ auth:
   user:
     token-header: Authorization
   client:
-    id: cashloan-android
+    id: cashloan-android-service
     secret: 123456
     token-header: x-client-token
 

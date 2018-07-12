@@ -168,6 +168,6 @@ cashloan:
            appname: cashloan-job-execute
            ip:
            port: 9999
-           logpath: /data/applogs/cashloan-job/jobhandler
+           logpath: /home/worker/log/cashloan-job/jobhandler
            logretentiondays: -1
         accessToken:

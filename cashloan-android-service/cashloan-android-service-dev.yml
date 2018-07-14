@@ -32,7 +32,7 @@ spring:
             username: user1
             password: Boig3pSr
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://47.92.117.118:3306/cashloan
+            url: jdbc:mysql://47.92.118.116:3306/cashloan
             druid:
               initial-size: 3
               max-active: 8
@@ -55,14 +55,14 @@ spring:
               username: user1
               password: Boig3pSr
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://47.92.117.118:3306/cashloan
+              url: jdbc:mysql://47.92.118.116:3306/cashloan
             two:
               username: user1
               password: Boig3pSr
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://47.92.117.118:3306/cashloan
+              url: jdbc:mysql://47.92.118.116:3306/cashloan
     rabbitmq:
-      host: ${RABBIT_MQ_HOST:47.92.117.118}
+      host: ${RABBIT_MQ_HOST:47.92.118.116}
       port: ${RABBIT_MQ_PORT:5672}
       username: user_admin
       password: passwd_admin
@@ -165,7 +165,7 @@ redis:
          maxActive: 300
          maxIdle: 100
          maxWait: 1000
-    host: ${REDIS_HOST:47.92.117.118}
+    host: ${REDIS_HOST:47.92.118.116}
     port:  ${REDIS_PORT:6379}
     password:
     timeout: 2000
@@ -174,4 +174,4 @@ redis:
     enable: true
     database: 0
 imageLoaction: /data1/pic
-imageSerIp: http://47.92.117.118
+imageSerIp: http://47.92.118.116

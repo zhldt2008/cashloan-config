@@ -97,6 +97,12 @@ mybatis-plus:
 server:
     port: 8786
 
+# 用户请求相关属性
+jwt:
+  token-header: Authorization
+  expire: 28800
+  # jwt密钥 Token相关
+  rsa-secret: xx1WET12^%3^(WE45
 
 eureka:
     instance:

@@ -152,3 +152,10 @@ auth:
     id: cashloan-business
     secret: 123456
     token-header: x-client-token
+rabbitmq:
+  host: ${RABBIT_MQ_HOST:172.31.186.176}
+  port: ${RABBIT_MQ_PORT:5672}
+  username: user_admin
+  password: mGpEmB5u
+  publisher-confirms: true
+  virtual-host: /

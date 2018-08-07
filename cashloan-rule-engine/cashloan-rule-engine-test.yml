@@ -1,8 +1,8 @@
 logging:
     level:
         com.yxyc: DEBUG
-        com.zxbit.cashloan.business: DEBUG
-    file: /home/worker/log/business/cashloan-business.log
+        com.zxbit.cashloan.rule: DEBUG
+    file: /home/worker/log/engine/cashloan-rule-engine.log
 spring:
     redis:
         database: 0
@@ -14,7 +14,7 @@ spring:
         config-file:
           yaml: ./redisson.yml
     application:
-        name: cashloan-business
+        name: cashloan-rule-engine
     datasource:
         druid:
           stat-view-servlet:
@@ -25,7 +25,7 @@ spring:
             username: user1
             password: Boig3pSr
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://172.26.197.235:3306/cashloan?characterEncoding=utf8&useSSL=false
+            url: jdbc:mysql://172.26.197.235:3306/cashloan_engine?characterEncoding=utf8&useSSL=false
             druid:
               initial-size: 3
               max-active: 8
@@ -48,12 +48,12 @@ spring:
               username: user1
               password: Boig3pSr
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://172.26.197.235:3306/cashloan?characterEncoding=utf8&useSSL=false
+              url: jdbc:mysql://172.26.197.235:3306/cashloan_engine?characterEncoding=utf8&useSSL=false
             two:
               username: user1
               password: Boig3pSr
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://172.26.197.235:3306/cashloan?characterEncoding=utf8&useSSL=false
+              url: jdbc:mysql://172.26.197.235:3306/cashloan_engine?characterEncoding=utf8&useSSL=false
     rabbitmq:
       host: ${RABBIT_MQ_HOST:172.26.197.235}
       port: ${RABBIT_MQ_PORT:5672}
@@ -90,7 +90,7 @@ mybatis-plus:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
 
 server:
-    port: 8768
+    port: 8769
 
 eureka:
     instance:
@@ -152,3 +152,11 @@ auth:
     id: cashloan-business
     secret: 123456
     token-header: x-client-token
+rabbitmq:
+  host: ${RABBIT_MQ_HOST:172.26.197.235}
+  port: ${RABBIT_MQ_PORT:5672}
+  username: user_admin
+  password: passwd_admin
+  publisher-confirms: true
+  virtual-host: /
+

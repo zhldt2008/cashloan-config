@@ -1,7 +1,5 @@
-logging:
-    level:
-        com.zxbit.cashloan.admin: DEBUG
-    file: /home/worker/log/admin/cashloan-admin.log
+log:
+  path: /home/worker/log/admin
 spring:
     redisson:
         config-file:

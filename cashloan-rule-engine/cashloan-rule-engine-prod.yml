@@ -1,8 +1,5 @@
-logging:
-    level:
-        com.yxyc: DEBUG
-        com.zxbit.cashloan.rule: DEBUG
-    file: /home/worker/log/engine/cashloan-rule-engine.log
+log:
+  path: /home/worker/log/engine
 spring:
     redis:
         database: 0

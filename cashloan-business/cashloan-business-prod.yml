@@ -1,8 +1,5 @@
-logging:
-    level:
-        com.yxyc: DEBUG
-        com.zxbit.cashloan.business: DEBUG
-    file: /home/worker/log/business/cashloan-business.log
+log:
+  path: /home/worker/log/business
 spring:
     redis:
         database: 0

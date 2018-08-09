@@ -1,8 +1,5 @@
-logging:
-    level:
-        com.yxyc: DEBUG
-        com.zxbit.cashloan.job: DEBUG
-    file: /home/worker/log/execute/cashloan-execute.log
+log:
+  path: /home/worker/log/execute
 spring:
     redis:
         database: 0

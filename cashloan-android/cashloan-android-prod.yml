@@ -1,7 +1,5 @@
-logging:
-    level:
-        com.zxbit.cashloan.android: DEBUG
-    file: /home/worker/log/android/cashloan-android.log
+log:
+  path: /home/worker/log/android
 spring:
     redisson:
         #config: {"singleServerConfig":{"password":null,"address":"redis://127.0.0.1:6379","database":0},"threads":0,"nettyThreads":0,"codec":{"class":"org.redisson.codec.JsonJacksonCodec"}}

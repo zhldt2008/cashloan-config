@@ -76,10 +76,8 @@ spring:
         filters:
         - StripPrefix=2
 
-logging:
-  level:
-    com.zxbit.cashloan.efficient: info
-  file: /home/worker/log/gate/cashloan-gate.log
+log:
+  path: /home/worker/log/gate
 
 management:
   endpoints:

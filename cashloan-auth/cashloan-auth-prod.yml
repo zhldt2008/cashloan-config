@@ -129,8 +129,5 @@ client:
   # 客户端(服务)请求密钥
   rsa-secret: x2318^^(*WRYQWR(QW&T
 
-logging:
-  level:
-      tk.mybatis: INFO
-      com.zxbit.cashloan.auth: DEBUG
-  file: /home/worker/log/auth/cashloan-auth-server.log
+log:
+  path: /home/worker/log/auth

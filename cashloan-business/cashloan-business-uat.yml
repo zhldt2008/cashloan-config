@@ -164,5 +164,5 @@ redis:
     sysName: cashloan-business
     enable: true
     database: 0
-imageSerIp: http://47.92.143.84
+imageSerIp: http://149.129.226.55
 baseImgUrl: /data1/pic

@@ -1,0 +1,170 @@
+log:
+  path: /home/worker/log/report_execute
+spring:
+    redisson:
+        config-file:
+          yaml: classpath:redisson.yml
+    application:
+        name: cashloan-report-execute
+    datasource:
+        druid:
+          stat-view-servlet:
+            loginUsername: admin
+            loginPassword: 123456
+        dynamic:
+          master:
+            username: user1
+            password: Boig3pSr
+            driver-class-name: com.mysql.jdbc.Driver
+            url: jdbc:mysql://47.92.118.116:3306/cashloan?characterEncoding=utf8&useSSL=false
+            druid:
+              initial-size: 3
+              max-active: 8
+              min-idle: 2
+              max-wait: -1
+              min-evictable-idle-time-millis: 30000
+              max-evictable-idle-time-millis: 30000
+              time-between-eviction-runs-millis: 0
+              validation-query: select 1
+              validation-query-timeout: -1
+              test-on-borrow: false
+              test-on-return: false
+              test-while-idle: true
+              pool-prepared-statements: true
+              max-open-prepared-statements: 100
+              filters: stat,wall
+              share-prepared-statements: true
+          slave:
+            one:
+              username: user1
+              password: Boig3pSr
+              driver-class-name: com.mysql.jdbc.Driver
+              url: jdbc:mysql://47.92.118.116:3306/cashloan?characterEncoding=utf8&useSSL=false
+            two:
+              username: user1
+              password: Boig3pSr
+              driver-class-name: com.mysql.jdbc.Driver
+              url: jdbc:mysql://47.92.118.116:3306/cashloan?characterEncoding=utf8&useSSL=false
+    rabbitmq:
+      host: ${RABBIT_MQ_HOST:47.92.118.116}
+      port: ${RABBIT_MQ_PORT:5672}
+      username: user_admin
+      password: passwd_admin
+    sleuth:
+      enabled: true
+      http:
+        legacy:
+          enabled: true
+sample:
+  zipkin:
+    # When enabled=false, traces log to the console. Comment to send to zipkin
+    enabled: false
+
+###################  mybatis-plus配置  ###################
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  typeAliasesPackage: com.zxbit.cashloan.admin.entity
+  global-config:
+    id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    db-column-underline: true
+    refresh-mapper: true
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    map-underscore-to-camel-case: false
+    cache-enabled: true #配置的缓存的全局开关
+    lazyLoadingEnabled: true #延时加载的开关
+    multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+
+server:
+    port: 8858
+
+eureka:
+    instance:
+        statusPageUrlPath: /actuator/info
+        healthCheckUrlPath: /actuator/health
+        # docker 部署开启
+        prefer-ip-address: true
+        ip-address: 127.0.0.1
+    client:
+        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
+                    # docker 部署开启
+            defaultZone: http://${EUREKA_HOST:127.0.0.1}:${EUREKA_PORT:8761}/eureka/
+# 必须配置
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 100000
+  ConnectTimeout: 100000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 ##并发执行的最大线程数，默认10
+      maxQueueSize: 1000 ##BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 110000
+
+
+# 配置swagger
+swagger:
+    enabled: true
+    base-package: com.zxbit.cashloan.job
+    title: cashloan-execute
+    version: 1.0.0.SNAPSHOT
+    description: 管理后端服务
+    contact:
+        name: execute
+
+auth:
+  serviceId: cashloan-auth
+  user:
+    token-header: Authorization
+  client:
+    id: cashloan-execute
+    secret: 123456
+    token-header: x-client-token
+
+#redis-cache 相关
+redis:
+    pool:
+         maxActive: 300
+         maxIdle: 100
+         maxWait: 1000
+    host: ${REDIS_HOST:47.92.118.116}
+    port:  ${REDIS_PORT:6379}
+    password:
+    timeout: 2000
+    # 服务或应用名
+    sysName: cashloan-execute
+    enable: true
+    database: 0
+
+cashloan:
+    job:
+        admin:
+           addresses: http://127.0.0.1:9080/cashloan-job-admin
+        executor:
+           appname: cashloan-report-execute
+           ip: 127.0.0.1
+           port: 8888
+           logpath: /data/applogs/cashloan-job/jobhandler
+           logretentiondays: -1
+        accessToken:

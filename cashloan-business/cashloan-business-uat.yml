@@ -7,6 +7,12 @@ spring:
         port: 6379
         pool:
         max-active: 20
+    redis2:
+        database: 1
+        host: 172.31.186.182
+        port: 6379
+        pool:
+        max-active: 20
     redisson:
         config-file:
           yaml: ./redisson.yml

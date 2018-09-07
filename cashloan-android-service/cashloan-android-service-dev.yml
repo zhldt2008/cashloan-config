@@ -175,3 +175,7 @@ redis:
     database: 0
 imageLoaction: /data1/pic
 imageSerIp: http://47.92.118.116
+data:
+    mongodb:
+      uri: mongodb://47.92.118.116:27017
+      database: test

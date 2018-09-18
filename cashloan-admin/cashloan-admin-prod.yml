@@ -55,14 +55,10 @@ spring:
       username: user_admin
       password: mGpEmB5u
     sleuth:
-      enabled: true
-      http:
-        legacy:
-          enabled: true
-sample:
-  zipkin:
-    # When enabled=false, traces log to the console. Comment to send to zipkin
-    enabled: false
+      sampler:
+        probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+    zipkin:
+      base-url: http://172.31.186.172:9411/ # 指定了 Zipkin 服务器的地址
 
 ###################  mybatis-plus配置  ###################
 mybatis-plus:

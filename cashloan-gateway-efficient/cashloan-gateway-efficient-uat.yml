@@ -44,10 +44,10 @@ spring:
       username: user_admin
       password: passwd_admin
   sleuth:
-    enabled: true
-    http:
-      legacy:
-        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    base-url: http://172.26.197.236:9411/ # 指定了 Zipkin 服务器的地址
   cloud:
     gateway:
       locator:

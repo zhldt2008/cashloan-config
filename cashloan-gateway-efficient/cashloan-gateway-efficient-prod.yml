@@ -29,21 +29,6 @@ feign:
     response:
       enabled: true
 
-ribbon:
-  eureka:
-    enabled: true
-  #http读取响应socket超时时间
-  ReadTimeout: 100000
-  #http建立socket超时时间,毫秒
-  ConnectTimeout: 100000
-  #同一台实例最大重试次数,不包括首次调用
-  MaxAutoRetries: 0
-  #重试负载均衡其他的实例最大重试次数,不包括首次server
-  MaxAutoRetriesNextServer: 2
-  #是否所有操作都重试，POST请求注意多次提交错误。
-  #默认true，设定为false的话，只有get请求会重试
-  OkToRetryOnAllOperations: false
-
 spring:
   application:
       name: cashloan-gateway-efficient
@@ -90,6 +75,12 @@ spring:
         - Path=/api/app/**
         filters:
         - StripPrefix=2
+        - name: Retry
+          args:
+            retries: 3 #重试次数，默认3，不包含本次
+            status: 404 #重试response code，默认没有
+            statusSeries: 500 #重试response code的系列，100（info），200（success），300（redirect），400（client error），500（server error），默认500
+            method: GET #重试的request请求，默认GET
 
 log:
   path: /home/worker/log/gate

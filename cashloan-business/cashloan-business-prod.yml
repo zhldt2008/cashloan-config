@@ -25,8 +25,8 @@ spring:
             url: jdbc:mysql://rm-k1a2c3c2ek6oa3rhp.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8&useSSL=false
             druid:
               initial-size: 3
-              max-active: 8
-              min-idle: 2
+              max-active: 100
+              min-idle: 60
               max-wait: -1
               min-evictable-idle-time-millis: 30000
               max-evictable-idle-time-millis: 30000

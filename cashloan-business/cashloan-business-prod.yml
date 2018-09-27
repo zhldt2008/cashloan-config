@@ -50,7 +50,7 @@ spring:
               username: user3
               password: CAEKdQ*f
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://rr-k1ayz6637xol71qky.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8&useSSL=false
+              url: jdbc:mysql://rr-k1aotfn885d62u765.mysql.ap-southeast-5.rds.aliyuncs.com:3306/cashloan?characterEncoding=utf8&useSSL=false
     rabbitmq:
       host: ${RABBIT_MQ_HOST:172.31.186.176}
       port: ${RABBIT_MQ_PORT:5672}

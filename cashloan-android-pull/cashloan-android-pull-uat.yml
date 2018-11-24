@@ -45,17 +45,17 @@ spring:
               max-open-prepared-statements: 100
               filters: stat,wall
               share-prepared-statements: true
-#          slave:
-#            one:
-#              username: uat
-#              password: CA#!dhQ*f
-#              driver-class-name: com.mysql.jdbc.Driver
-#              url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
-#            two:
-#              username: uat
-#              password: CA#!dhQ*f
-#              driver-class-name: com.mysql.jdbc.Driver
-#              url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
+          slave:
+            one:
+              username: uat
+              password: CA#!dhQ*f
+              driver-class-name: com.mysql.jdbc.Driver
+              url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
+            two:
+              username: uat
+              password: CA#!dhQ*f
+              driver-class-name: com.mysql.jdbc.Driver
+              url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
     rabbitmq:
       host: ${RABBIT_MQ_HOST:172.31.186.182}
       port: ${RABBIT_MQ_PORT:5672}

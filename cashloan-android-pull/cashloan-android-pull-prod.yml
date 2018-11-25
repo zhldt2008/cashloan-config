@@ -7,7 +7,7 @@ spring:
           yaml: ./redisson.yml
     redis:
         database: 1
-        host: 172.31.186.182
+        host: 172.31.186.176
         port: 6379
         pool:
         max-active: 20
@@ -160,7 +160,7 @@ redis:
          maxActive: 300
          maxIdle: 100
          maxWait: 1000
-    host: ${REDIS_HOST:172.31.186.182}
+    host: ${REDIS_HOST:172.31.186.176}
     port:  ${REDIS_PORT:6379}
     password:
     timeout: 2000
@@ -169,4 +169,4 @@ redis:
     enable: true
     database: 0
 imageLoaction: /data1/pic
-imageSerIp: http://149.129.226.55
+imageSerIp: http://www.koo-cash.com/

@@ -57,7 +57,7 @@ spring:
               driver-class-name: com.mysql.jdbc.Driver
               url: jdbc:mysql://172.31.186.203:8066/cashloan
     rabbitmq:
-      host: ${RABBIT_MQ_HOST:172.31.186.182}
+      host: ${RABBIT_MQ_HOST:172.31.186.176}
       port: ${RABBIT_MQ_PORT:5672}
       username: user_admin
       password: passwd_admin

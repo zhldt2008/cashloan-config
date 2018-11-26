@@ -24,10 +24,10 @@ spring:
             loginPassword: 123456
         dynamic:
           master:
-            username: user2
-            password: CAEKdQ*f
+            username: uat
+            password: CA#!dhQ*f
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://172.31.186.203:8066/cashloan
+            url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
             druid:
               initial-size: 3
               max-active: 8
@@ -47,15 +47,15 @@ spring:
               share-prepared-statements: true
           slave:
             one:
-              username: user2
-              password: CAEKdQ*f
+              username: uat
+              password: CA#!dhQ*f
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://172.31.186.203:8066/cashloan
+              url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
             two:
-              username: user2
-              password: CAEKdQ*f
+              username: uat
+              password: CA#!dhQ*f
               driver-class-name: com.mysql.jdbc.Driver
-              url: jdbc:mysql://172.31.186.203:8066/cashloan
+              url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
     rabbitmq:
       host: ${RABBIT_MQ_HOST:172.31.186.182}
       port: ${RABBIT_MQ_PORT:5672}

@@ -27,7 +27,7 @@ spring:
             username: user2
             password: CAEKdQ*f
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://172.31.186.203:8066/cashloan-uat
+            url: jdbc:mysql://172.31.186.203:8066/cashloan
             druid:
               initial-size: 3
               max-active: 8

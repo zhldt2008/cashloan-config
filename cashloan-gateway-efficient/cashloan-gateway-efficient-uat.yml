@@ -84,6 +84,13 @@ spring:
         - Path=/api/app/**
         filters:
         - StripPrefix=2
+      - id: cashloan-supermarket
+        uri: lb://cashloan-supermarket
+        order: 8003
+        predicates:
+        - Path=/api/super/**
+        filters:
+        - StripPrefix=2
 
 log:
   path: /home/worker/log/gate

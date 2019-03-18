@@ -77,8 +77,8 @@ spring:
         - Path=/api/admin/**
         filters:
         - StripPrefix=2
-      - id: cashloan-android
-        uri: lb://cashloan-android
+      - id: cashloan-app-service
+        uri: lb://cashloan-app-service
         order: 8002
         predicates:
         - Path=/api/app/**

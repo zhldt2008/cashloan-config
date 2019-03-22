@@ -91,6 +91,13 @@ spring:
         - Path=/api/super/**
         filters:
         - StripPrefix=2
+      - id: cashloan-pay-router
+        uri: lb://cashloan-pay-router
+        order: 8004
+        predicates:
+        - Path=/api/payrouter/**
+        filters:
+        - StripPrefix=2
 
 log:
   path: /home/worker/log/gate

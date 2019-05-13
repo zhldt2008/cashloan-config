@@ -82,6 +82,7 @@ spring:
         order: 8002
         predicates:
         - Path=/api/app/**
+        - Path=/god/app/**
         filters:
         - StripPrefix=2
       - id: cashloan-supermarket
@@ -96,13 +97,6 @@ spring:
         order: 8004
         predicates:
         - Path=/api/payrouter/**
-        filters:
-        - StripPrefix=2
-      - id: cashloan-app-service
-        uri: lb://cashloan-app-service
-        order: 8005
-        predicates:
-        - Path=/god/app/**
         filters:
         - StripPrefix=2
 

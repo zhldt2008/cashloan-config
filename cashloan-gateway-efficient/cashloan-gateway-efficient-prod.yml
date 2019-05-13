@@ -58,7 +58,7 @@ spring:
         uri: lb://cashloan-auth
         order: 8000
         predicates:
-        - Path=/api/auth/**
+        - Path=/{segment}/auth/**
         filters:
         - StripPrefix=2
       - id: cashloan-admin
@@ -72,7 +72,7 @@ spring:
         uri: lb://cashloan-app-service
         order: 8002
         predicates:
-        - Path=/api/app/**
+        - Path=/{segment}/app/**
         filters:
         - StripPrefix=2
         - name: Retry

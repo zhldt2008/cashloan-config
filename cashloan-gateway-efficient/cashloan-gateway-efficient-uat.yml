@@ -98,6 +98,13 @@ spring:
         - Path=/api/payrouter/**
         filters:
         - StripPrefix=2
+      - id: cashloan-app-service
+        uri: lb://cashloan-app-service
+        order: 8005
+        predicates:
+        - Path=/god/app/**
+        filters:
+        - StripPrefix=2
 
 log:
   path: /home/worker/log/gate

@@ -81,7 +81,7 @@ spring:
         uri: lb://cashloan-app-service
         order: 8002
         predicates:
-        - Path=/api/app/**
+        - Path=/{segment}/app/**
         filters:
         - StripPrefix=2
       - id: cashloan-supermarket

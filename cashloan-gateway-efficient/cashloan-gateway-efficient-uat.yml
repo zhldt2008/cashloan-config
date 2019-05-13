@@ -67,7 +67,7 @@ spring:
         uri: lb://cashloan-auth
         order: 8000
         predicates:
-        - Path=/api/auth/**
+        - Path=/{segment}/auth/**
         filters:
         - StripPrefix=2
       - id: cashloan-admin
